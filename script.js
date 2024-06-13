@@ -1,4 +1,6 @@
 const notifications = document.querySelector(".container");
+const btn = document.querySelector(".btn");
+
 let styles = ["red", "green", "blue", "yellow"];
 
 let text = [
@@ -15,16 +17,11 @@ const shuffle = (array) => {
 styles = shuffle(styles);
 text = shuffle(text);
 
-const btn = document.querySelector(".btn");
-
-console.log(btn);
-
 btn.addEventListener("click", () => {
   styles = shuffle(styles);
   text = shuffle(text);
 
   const index = Math.trunc(Math.random() * 3);
-  console.log(index);
   const note = document.createElement("div");
   note.textContent = text[index];
   note.className = "note";
